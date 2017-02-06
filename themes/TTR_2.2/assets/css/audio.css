@@ -1,0 +1,343 @@
+/*-------------------------------------------------------------
+	Audio Playlist
+	http://www.cedaro.com/blog/customizing-mediaelement-wordpress/
+--------------------------------------------------------------*/
+
+/* ----- RESET ----- */
+.ttr-content .wp-playlist *:not(.mejs-offscreen)
+, .ttr-content .wp-playlist.wp-audio-playlist
+, .ttr-content .wp-playlist.wp-audio-playlist.wp-playlist-dark 
+, .ttr-content .wp-playlist.wp-audio-playlist.wp-playlist-light
+, .ttr-content .wp-playlist .wp-playlist-playing
+, .ttr-content .wp-playlist
+, .ttr-content .wp-playlist-caption
+, .ttr-content .wp-playlist-item-title
+, .ttr-content .wp-playlist-current-item
+, .ttr-content .mejs-container
+, .ttr-content .mejs-container .mejs-controls
+, .ttr-content .mejs-embed
+, .ttr-content .mejs-embed body {
+	background: transparent;
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+
+.ttr-content .wp-playlist a {
+	border-bottom: none;
+	text-decoration: none;
+}
+
+.ttr-content .wp-playlist .wp-playlist-current-item { display: none; }
+.ttr-content .wp-playlist .wp-playlist-current-item img { 
+	border: 0;
+	float: none;
+	height: auto;
+	max-width: 10%;
+	margin: 0;
+	padding: 0;
+}
+
+
+
+/*-------------------------------------------------------------
+	Audio Playlist
+	STYLE
+--------------------------------------------------------------*/
+
+/* ----- MAKE INVISIBLE VISIBLE ----- */
+/*.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail { border: solid red 1px; }*/
+/*.ttr-content .th-mejs-container .mejs-controls .mejs-play
+, .ttr-content .th-mejs-container .mejs-controls .mejs-pause { border: solid 1px magenta; }*/
+
+.ttr-content .wp-playlist {
+	font-family: "Univers LT W01_55 Roman", Helvetica, sans-serif;
+	max-width: 1050px;
+	margin: 0 auto;
+	padding: 150px 15% 150px;
+	border: none;
+}
+
+.single .ttr-content .wp-playlist
+, .page .ttr-content .wp-playlist {
+	/*padding: 75px 0 75px;*/
+}
+
+/* ----- AUDIO PLAYER ----- */
+
+.ttr-content .th-mejs-container
+, .ttr-content .th-mejs-container .mejs-controls
+, .ttr-content .th-mejs-container .mejs-controls .mejs-time-rail { 
+	height: 65px !important;
+}
+
+.ttr-content .th-mejs-container
+, .ttr-content .th-mejs-container .mejs-controls .mejs-time-rail
+, .ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-total
+, .ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-current
+, .ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded {
+	height: 65px;
+	margin: 0;
+	padding: 0;
+	background: transparent;
+}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-play
+, .ttr-content .th-mejs-container .mejs-controls .mejs-pause {
+	width: 65px;
+	height: 65px;
+	position: relative;
+}
+.ttr-content .th-mejs-container .mejs-controls .mejs-play button
+, .ttr-content .th-mejs-container .mejs-controls .mejs-pause button {
+	margin: 0;
+	padding: 0;
+}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-play button {
+	width: 0;
+	height: 0;
+	border-style: solid;
+	border-width: 40px 0 40px 65px;
+	border-color: transparent transparent transparent #000000;
+	top: -7px;
+}
+	.ttr-content .th-mejs-container .mejs-controls .mejs-play:hover button {
+		border-color: transparent transparent transparent #FFFFFF;
+	}
+
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-pause button {
+	border-left: solid 25px;
+	border-right: solid 25px;
+	height: 100%;
+	width: 100%;
+}
+	.ttr-content .th-mejs-container .mejs-controls .mejs-pause:hover button {
+		border-color: #FFFFFF;
+	}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail { 
+	position: relative;
+}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-total {
+	border-bottom: solid 4px;
+}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {
+	background: black;
+}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded {
+	background: transparent;
+	border-top: solid 4px;
+	left: -4px;
+}
+	.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded[style] {
+		border-right: solid 4px black;
+	}
+	.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded[style] 
+	, .ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-current[style] {
+		border-left: solid 4px black;
+	}
+
+.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-buffering {
+	height: 100%;
+	width: 100%;
+	border-top: solid 4px;
+	border-right: solid 4px;
+	background-image: none;
+	background-image: -o-linear-gradient(-45deg,#000 25%,transparent 25%,transparent 50%,#000 50%,#000 75%,transparent 75%,transparent);
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,#000),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,#000),color-stop(0.75,#000),color-stop(0.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(-45deg,#000 25%,transparent 25%,transparent 50%,#000 50%,#000 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(-45deg,#000 25%,transparent 25%,transparent 50%,#000 50%,#000 75%,transparent 75%,transparent);
+	background-image: -ms-linear-gradient(-45deg,#000 25%,transparent 25%,transparent 50%,#000 50%,#000 75%,transparent 75%,transparent);
+	background-image: linear-gradient(-45deg,#000 25%,transparent 25%,transparent 50%,#000 50%,#000 75%,transparent 75%,transparent);
+	-webkit-background-size: 32px 32px;
+	-moz-background-size: 32px 32px;
+	-o-background-size: 32px 32px;
+	background-size: 32px 32px;
+	background-position: -400% 0;
+	-webkit-animation: th_buffering 70s linear infinite;
+	-moz-animation: th_buffering 70s linear infinite;
+	-ms-animation: th_buffering 70s linear infinite;
+	-o-animation: th_buffering 70s linear infinite;
+	animation: th_buffering 70s linear infinite;
+}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-mute
+, .ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-horizontal-volume-slider {
+	border: none;
+	overflow: hidden;
+	padding: 0;
+	width: 0;
+}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls a.mejs-horizontal-volume-slider .mejs-horizontal-volume-total
+, .ttr-content .wp-playlist .th-mejs-container .mejs-controls a.mejs-horizontal-volume-slider .mejs-horizontal-volume-current
+, .ttr-content .wp-playlist .th-mejs-container .mejs-controls a.mejs-horizontal-volume-slider .mejs-horizontal-volume-handle {
+	display: none;
+}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-handle {
+	display: none !important;
+	background: #fff;
+	border: none;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	cursor: pointer;
+	text-align: center;
+	width: 57px;
+	height: 57px;
+	top: 4px;
+}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time {
+	height: 100%;
+	padding: 0;
+}
+
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time span {
+	display: block;
+	font-family: "UniversLTW01-53Extended", Arial, sans-serif;
+	font-size: 16px;
+	padding: 27px;
+}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-float {
+	width: 100px;
+	border: none;
+	height: 35px;
+	top: -55px;
+	margin-left: -50px;
+}
+
+	.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-float:after {
+		content: ' ';
+		display: block;
+		height: 65px;
+		border-right: dashed white 4px;
+		top: 55px;
+		position: absolute;
+		left: 49px;
+	}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-float-current {
+	background: white;
+	font-family: "UniversLTW01-53Extended", Arial, sans-serif;
+	font-size: 16px;
+	height: 35px;
+	margin: 0;
+	padding: 12px 0;
+	width: 100px;
+}
+
+.ttr-content .wp-playlist .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-float-corner {
+	border: solid 12px white;
+	border-color: white transparent transparent;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+	border-radius: 0;
+	left: 38px;
+	top: 35px;
+}
+
+.ttr-content .wp-playlist .wp-playlist-prev
+, .ttr-content .wp-playlist-next {
+	height: 0;
+}
+
+@-webkit-keyframes th_buffering {
+	from {
+		-webkit-transform: translateX(-75%);
+		-ms-transform: translateX(-75%);
+		transform: translateX(-75%);
+	}
+	to {
+		-webkit-transform: translateX(0);
+		-ms-transform: translateX(0);
+		transform: translateX(0);
+	}
+}
+
+@keyframes th_buffering {
+	from {
+		background-position: -400% 0;
+	}
+	to {
+		background-position: 400% 0;
+	}
+}
+
+
+
+/* ----- PLAYLIST TRACKS ----- */
+
+.ttr-content .wp-playlist .wp-playlist-tracks {
+	background-color: black;
+	color: white;
+	padding: 22px 30px 30px;
+	margin-top: 30px;
+}
+
+.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item {
+	border: none;
+	margin-bottom: 8px;
+}
+
+	.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item:last-child {
+		margin-bottom: 0;
+	}
+
+	.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item.wp-playlist-playing {
+		font-weight: normal;
+	}
+	.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item.wp-playlist-playing:before
+	, .ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item.wp-playlist-playing:hover:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		width: 28px;
+		height: 28px;
+		border-radius: 50%;
+		background-color: white;
+		left: -44px;
+		top: -4px;
+	}
+	.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item:hover:before {
+		content: ' ';
+		display: block;
+		position: absolute;
+		width: 26px;
+		height: 8px;
+		background-color: white;
+		left: -43px;
+		top: 6px;
+	}
+
+.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption
+, .ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption .wp-playlist-item-title
+, .ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption .wp-playlist-item-artist
+, .ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-item-length {
+	color: white;
+	font-size: 16px;
+	line-height: 1.4;
+	max-width: none;
+	text-decoration: none;
+	text-transform: none;
+	white-space: normal;
+}
+
+.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption {
+	max-width: 85%;
+}
+
+
+
+
+@media screen and (max-width: 600px) {
+	.ttr-content .wp-playlist { padding: 70px 5%; }
+}

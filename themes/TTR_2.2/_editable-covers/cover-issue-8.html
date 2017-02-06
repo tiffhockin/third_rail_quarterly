@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<title>The Third Rail Issue 8</title>
+
+	<style type="text/css">
+
+		html, body { 
+			background-color: white;
+			margin: 0;
+			padding: 0;
+			width: 100%;
+			height: 100%;
+			overflow: hidden;
+		}
+
+		#content {
+			width: 100%;
+  			height: 100%;
+			-webkit-box-sizing: border-box;
+			   -moz-box-sizing: border-box;
+			        box-sizing: border-box;
+		}
+
+		#content.padding { padding: 30px; }
+
+		#cover {
+			position: absolute;
+			top: 0;
+			left: 0;
+			bottom: 0;
+			right: 0;
+			height: 100vh;
+			width: 100%;
+			overflow: hidden;
+			background-color: black;
+		}
+
+		#cover * { box-sizing: border-box; }
+
+		.stripe {
+			border-top: dotted 3px;
+			border-bottom: dashed 2px;
+			border-color: black;
+			position: relative;
+			height: 7.69%;
+			width: 100%;
+			background-color: white;
+			display: block;
+		}
+		.stripe:nth-child(odd) { 
+			background-color: white; 
+		}
+		.stripe:nth-child(even) {
+			border-color: white;
+			z-index: 9999;
+		}
+
+		.friction .stripe:nth-child(even) {
+			-webkit-animation: friction_B 0.025s linear infinite alternate;
+			-moz-animation: friction_B 0.025s linear infinite alternate;
+			-o-animation: friction_B 0.025s linear infinite alternate;
+			animation: friction_B 0.025s linear infinite alternate;
+		}
+
+		.friction .stripe:nth-child(odd) {
+			-webkit-animation: friction_A 0.03s linear infinite alternate;
+			-moz-animation: friction_A 0.03s linear infinite alternate;
+			-o-animation: friction_A 0.03s linear infinite alternate;
+			animation: friction_A 0.03s linear infinite alternate;
+		}
+
+		.friction .stripe:nth-child(3n) {
+			-webkit-animation: friction_A 0.01s linear infinite alternate;
+			-moz-animation: friction_A 0.01s linear infinite alternate;
+			-o-animation: friction_A 0.01s linear infinite alternate;
+			animation: friction_A 0.01s linear infinite alternate;
+		}
+
+		.friction .stripe:nth-child(6n) {
+			-webkit-animation: friction_A 0.035s linear infinite alternate;
+			-moz-animation: friction_A 0.035s linear infinite alternate;
+			-o-animation: friction_A 0.035s linear infinite alternate;
+			animation: friction_A 0.035s linear infinite alternate;
+		}
+
+		@-webkit-keyframes friction_A {
+			0% { transform: translate(-2px,2px); }
+			100% { transform: translate(2px,-2px); }
+		}
+		@-webkit-keyframes friction_B {
+			0% { transform: translate(3px,-4px); }
+			100% { transform: translate(-4px,3px); }
+		}
+
+		@-moz-keyframes friction_A {
+			0% { transform: translate(-2px,2px); }
+			100% { transform: translate(2px,-2px); }
+		}
+		@-moz-keyframes friction_B {
+			0% { transform: translate(3px,-4px); }
+			100% { transform: translate(-4px,3px); }
+		}
+
+		@-o-keyframes friction_A {
+			0% { transform: translate(-2px,2px); }
+			100% { transform: translate(2px,-2px); }
+		}
+		@-o-keyframes friction_B {
+			0% { transform: translate(3px,-4px); }
+			100% { transform: translate(-4px,3px); }
+		}
+
+		@keyframes friction_A {
+			0% { transform: translate(-2px,2px); }
+			100% { transform: translate(2px,-2px); }
+		}
+		@keyframes friction_B {
+			0% { transform: translate(3px,-4px); }
+			100% { transform: translate(-4px,3px); }
+		}
+
+	</style>
+
+</head>
+<body>
+
+	<div id="content" class="">
+
+		<div id="cover">
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+			<div class="stripe"></div>
+		</div>
+
+	</div> <!-- #content -->
+
+	<script type="text/javascript" src="../assets/js/jquery-2.1.1.min.js"></script> -->
+	<script type="text/javascript">
+
+		jQuery(document).ready(function($){
+
+			var parent_doc = $(parent.document);
+			var parent_doc_body = $(parent.document.body);
+
+			parent_doc.bind({
+				scroll : function(){
+					setTimeout(function(){
+						// CSS animation slows down other things
+						// turn it off if stripes are not visible
+						toggleFriction();
+					}, 30 );
+				}
+			});
+
+			function toggleFriction() {
+				if ( parent_doc_body.hasClass('scrolled') ) {
+					$('#content').removeClass('friction')
+				} else {
+					$('#content').addClass('friction')
+				}
+			}
+
+		});
+
+	</script>
+
+</body>
+</html>

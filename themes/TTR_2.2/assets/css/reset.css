@@ -1,0 +1,108 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, hr {
+	border: 0;
+	font-family: inherit;
+	font-size: 100%;
+	font-style: inherit;
+	font-weight: inherit;
+	margin: 0;
+	outline: 0;
+	padding: 0;
+	vertical-align: baseline;
+}
+html {
+	font-size: 62.5%; /* Corrects text resizing oddly in IE6/7 when body font-size is set using em units http://clagnut.com/blog/348/#c790 */
+	-webkit-text-size-adjust: 100%; /* Prevents iOS text size adjust after orientation change, without disabling user zoom */
+	-ms-text-size-adjust:     100%; /* www.456bereastreet.com/archive/201012/controlling_text_s_backboneize_in_s_backboneafari_for_ios_without_disabling_user_zoom/ */
+}
+body {
+	background-color: #FFFFFF;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+main,
+nav,
+section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+table { /* tables still need 'cellspacing="0"' in the markup */
+	border-collapse: separate;
+	border-spacing: 0;
+}
+caption, th, td {
+	font-weight: normal;
+	text-align: left;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: "";
+}
+blockquote, q {
+	quotes: "" "";
+}
+a:link {
+	text-decoration: none;
+}
+a:focus {
+	outline: none;
+}
+a:hover,
+a:active {
+	outline: 0;
+}
+a img {
+	border: 0;
+}
+textarea
+, input
+, input[type="submit"]
+, input[type="text"]
+, input[type="button"]
+, button {
+	border-radius: none;
+	-webkit-border-radius: 0px;
+	-webkit-appearance: none;
+}
+
+
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+	-webkit-box-sizing: border-box;
+	   -moz-box-sizing: border-box;
+	        box-sizing: border-box;
+}
+*,
+*:before,
+*:after { 
+	box-sizing: inherit;
+}
+
+/* Clears floated elements */
+.clear:before, 
+.clear:after { content: ' '; display: table; }
+.clear:after { clear: both; }
+.clear { *zoom: 1; }
+
+/* Improve font rendering, especially in Chrome */
+*,
+*:after,
+*:before {
+	-webkit-font-smoothing: antialiased !important;
+	font-smoothing: antialiased !important;
+	-moz-osx-font-smoothing: grayscale !important;
+	text-rendering:optimizeLegibility; /* kerning */
+}

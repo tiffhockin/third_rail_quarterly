@@ -1,0 +1,141 @@
+/* 
+
+Custom CSS
+
+Place all custom CSS in this file, adding new lines at the end of the document. Be sure to use appropriate specifiers so you do not override anything other than intended.
+
+Please also be sure to leave descriptive notes and comments.
+
+*/
+
+
+/* ----------------------------------------
+	Issue 5
+---------------------------------------- */
+
+.color-bg.issue-5 { background-color: black; color: white; }
+
+.issue-5 .white-bg a:link
+, .issue-5 .white-bg a:visited { color: black; }
+
+.issue-5.white-bg a:link
+, .issue-5.white-bg a:visited { color: white; }
+
+.issue-5#main-nav a { color: white; }
+.issue-5#main-nav hr { border-color: white; }
+.issue-5#main-nav span { opacity: 0.5; font-family: "Univers W01_63 Bold Ex", Helvetica, Arial, sans-serif; }
+
+a.issue-5.issue-link { background: black; color: white; }
+.issue-5 img.issue-count, .issue-5 img.mark-interior { -webkit-filter: invert(100%); }
+a.issue-5.issue-link:hover { background: white; color: black; }
+a.issue-5.issue-link:hover img { -webkit-filter: invert(0%); }
+
+.issue-5 .video-window .caption { color: white; }
+.issue-5 #table-of-contents .wrapper { border-top: solid 4px white; }
+
+.issue-5.ttr-content .wp-playlist .wp-playlist-tracks {
+	background-color: white;
+	color: black;
+}
+
+.issue-5 #table-of-contents .qualifier { color: white; }
+
+.issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-current {
+	background: white;
+}
+
+.issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-total
+, .issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-loaded[style] 
+, .issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-current[style] {
+	border-color: white;
+}
+
+.issue-5.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption
+, .issue-5.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption .wp-playlist-item-title
+, .issue-5.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-caption .wp-playlist-item-artist
+, .issue-5.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item .wp-playlist-item-length {
+	color: black; 
+}
+
+.issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-play button { border-color: transparent transparent transparent white; }
+.issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-pause button { border-color: white; }
+	
+.issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-play:hover button
+, .issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-pause:hover button { opacity: 0.5; }
+
+
+.issue-5.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item.wp-playlist-playing:before, .ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item.wp-playlist-playing:hover:before
+, .issue-5.ttr-content .wp-playlist .wp-playlist-tracks .wp-playlist-item:hover:before  {
+	box-shadow: 3px 2px black;
+}
+
+.issue-5.ttr-content .th-mejs-container .mejs-controls .mejs-time-rail .mejs-time-buffering {
+	border-top: solid 4px white;
+	border-right: solid 4px white;
+	background-image: none;
+	background-image: -o-linear-gradient(-45deg,white 25%,transparent 25%,transparent 50%,white 50%,white 75%,transparent 75%,transparent);
+	background-image: -webkit-gradient(linear,0 100%,100% 0,color-stop(0.25,white),color-stop(0.25,transparent),color-stop(0.5,transparent),color-stop(0.5,white),color-stop(0.75,white),color-stop(0.75,transparent),to(transparent));
+	background-image: -webkit-linear-gradient(-45deg,white 25%,transparent 25%,transparent 50%,white 50%,white 75%,transparent 75%,transparent);
+	background-image: -moz-linear-gradient(-45deg,white 25%,transparent 25%,transparent 50%,white 50%,white 75%,transparent 75%,transparent);
+	background-image: -ms-linear-gradient(-45deg,white 25%,transparent 25%,transparent 50%,white 50%,white 75%,transparent 75%,transparent);
+	background-image: linear-gradient(-45deg,white 25%,transparent 25%,transparent 50%,white 50%,white 75%,transparent 75%,transparent);
+}
+
+
+
+/* ----------------------------------------
+	Issue 8
+---------------------------------------- */
+
+.color-bg.issue-8 { background-color: #FFFFFF; }
+.issue-8.white-bg a:link, .white-bg a:visited
+, .issue-8#main-nav a:hover, .issue-8 .section-title .in-print { color: #676767; }
+
+.issue-8 .content-grid a:hover
+, .issue-8.issue-link
+, .issue-8#cover { background: url(../TTR8_posters/brick.png) #FFFFFF; background-position: center; background-attachment: fixed; background-size: 48px; }
+
+a.issue-8.issue-link { color: black; }
+a.issue-8.issue-link img { -webkit-filter: invert(0%); }
+a.issue-8.issue-link:hover { color: white; }
+a.issue-8.issue-link:hover img { -webkit-filter: invert(100%); }
+
+.issue-8 .white-bg a:link
+, .issue-8 .white-bg a:visited { color: #676767; }
+
+.issue-8 #table-of-contents p { text-shadow: 2px 2px #FFFFFF, -2px -2px #FFFFFF;	}
+.issue-8 .media-window .caption span { background-color: #FFFFFF; }
+
+#main-nav.issue-8 .nav-rule.top { display: none; }
+.not-home #main-nav.issue-8 .nav-rule.top { display: block; }
+
+.issue-8 .content-grid { margin-bottom: 100px; }
+
+.issue-8 .content-grid .content-grid-container { margin-right: -15px; }
+
+.issue-8 .content-grid .column { border-left: solid 4px; margin-bottom: 30px; padding: 0; padding-right: 15px; }
+.issue-8 .content-grid .column { width: 25%; }
+
+.issue-8 .content-grid a { border: none; color: black; display: block; margin: 0; padding: 0 15px 15px 15px; }
+
+.issue-8 .content-grid .caption { display: block; font-size: 16px; line-height: 1.15; min-height: 2.3em; margin-bottom: 12px; }
+
+.issue-8 .content-grid .row { clear: both; margin: 0; border: 0; height: 0; }
+
+.issue-8 .media-window .media-container { text-align: center; }
+
+.issue-8 .media-window a { display: inline-block; border: none; margin: 0; }
+.issue-8 .media-window a div { display: inline-block; }
+.issue-8 .media-window a:hover div { background-color: #ff2f00; }
+.issue-8 .media-window a img { margin: 0; }
+.issue-8 .media-window a:hover img { mix-blend-mode: screen; }
+
+.issue-8 .media-window .caption span { font-size: 16px; line-height: 1.15; }
+
+@media screen and (max-width: 600px) {
+	.issue-8 .content-grid .column { width: 100% !important; }
+	.issue-8 .content-grid a:hover { background: url(../TTR8_posters/brick.png) #FFFFFF; background-position: center; background-attachment: initial; background-size: 48px; }
+}
+
+
+
